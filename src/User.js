@@ -1,6 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-
-class User extends React.component {
+class User extends React.Component {
     constructor(props){
         super(props);
 
@@ -13,8 +14,7 @@ class User extends React.component {
     }
 
     handleChange(event) {
-        this.setState({value: event.t
-            arget.value});
+        this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
@@ -25,14 +25,19 @@ class User extends React.component {
 
     render() {
         return (
-            <form onSubmit ={{this.handleSubmit}>
-                <label> do you want to talk to me ?
-                     <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    <input type='submit' value="Submit" />
+            <form onSubmit ={this.handleSubmit}>
+                <label > do you want to talk to me ?
+                    <p>
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        <input type='submit' value="Submit" />
+                    </p>
                 </label>
+
 
             </form>
 
         );
     }
 }
+
+export default User;
