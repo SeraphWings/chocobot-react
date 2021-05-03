@@ -1,12 +1,17 @@
+import React from 'react';
 import './Main.css';
 import User from './User.js';
 
-function Main() {
-  return (
-    <div className="Main">
-      <User />
-    </div>
-  );
+class Main extends React.Component{
+
+    render(){
+        return (
+          <div className="Main">
+            <User />
+          </div>
+        );
+    }
+
 }
 
 export default Main;
