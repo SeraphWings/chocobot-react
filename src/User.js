@@ -5,13 +5,13 @@ class User extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.onSubmit();
+        
 
     }
 
     render() {
         return (
-            <form onSubmit ={(event) => this.handleSubmit()}>
+            <form onSubmit ={this.handleSubmit}>
                 <label > do you want to talk to me ?
                     <p>
                         <input type="text" />
