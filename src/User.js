@@ -11,7 +11,7 @@ class User extends React.Component {
 
     render() {
         return (
-            <form onSubmit ={this.props.onSubmit()}>
+            <form onSubmit ={(event) => this.handleSubmit()}>
                 <label > do you want to talk to me ?
                     <p>
                         <input type="text" />

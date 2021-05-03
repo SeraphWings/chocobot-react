@@ -22,7 +22,7 @@ class Main extends React.Component{
     render(){
         return (
           <div className = "Main">
-            <User onSubmit={() => this.handleChatSubmit()}/>
+            <User onSubmit={() => this.handleChatSubmit}/>
           </div>
         );
     }
