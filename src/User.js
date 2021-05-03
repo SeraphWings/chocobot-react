@@ -5,8 +5,7 @@ class User extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        
-
+        this.props.onSubmit(event.target.value);
     }
 
     render() {
@@ -14,7 +13,7 @@ class User extends React.Component {
             <form onSubmit ={this.handleSubmit}>
                 <label > do you want to talk to me ?
                     <p>
-                        <input type="text" />
+                        <input type="text"  />
                         <input type='submit' value = "Send"/>
                     </p>
                 </label>
