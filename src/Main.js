@@ -15,6 +15,7 @@ class Main extends React.Component{
     }
 
     handleChatSubmit(msg){
+
         this.setState({
             dialog: this.state.dialog.concat(msg),
         })
@@ -24,7 +25,7 @@ class Main extends React.Component{
     render(){
         return (
           <div className = "Main">
-            <User onSubmit = {this.handleChatSubmit} />
+            <User handleChatSubmit = {this.handleChatSubmit}/>
           </div>
         );
     }
