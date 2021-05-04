@@ -1,4 +1,5 @@
 import React from 'react';
+import './Textlog.css';
 
 class Textlog extends React.Component {
 
