@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class User extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.handleChatSubmit();
+        if(this.props.value !== ''){
+            this.props.handleChatSubmit();
+        }
+
     }
 
     handleChange = (event) => {
@@ -18,7 +20,7 @@ class User extends React.Component {
             <form onSubmit ={this.handleSubmit}>
                 <label > do you want to talk to me ?
                     <p>
-                        <input type="text" onChange={this.handleChange}/>
+                        <input type="text" value={this.props.value} onChange={this.handleChange}/>
                         <input type='submit' value = "Send"/>
                     </p>
                 </label>

@@ -20,7 +20,9 @@ class Main extends React.Component{
     handleChatSubmit(){
         this.setState({
             dialog: this.state.dialog.concat(this.state.input),
+            input: '',
         })
+
     }
 
     handleOnchange(msg){
@@ -33,7 +35,9 @@ class Main extends React.Component{
     render(){
         return (
           <div className = "Main">
-            <User handleChatSubmit = {this.handleChatSubmit}  handleOnchange = {this.handleOnchange}/>
+            <User handleChatSubmit = {this.handleChatSubmit}
+                handleOnchange = {this.handleOnchange}
+                value ={this.state.input}/>
             <Textlog dialog = {this.state.dialog}/>
           </div>
         );
