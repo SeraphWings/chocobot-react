@@ -5,13 +5,12 @@ class User extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-
+        this.props.handleChatSubmit();
     }
 
     handleChange = (event) => {
-        this.props.handleChatSubmit(event.target.value);
-        console.log(event.target.value);
+        this.props.handleOnchange(event.target.value);
+        // console.log(event.target.value);
     }
 
     render() {

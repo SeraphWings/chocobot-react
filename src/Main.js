@@ -9,15 +9,22 @@ class Main extends React.Component{
 
         this.state = {
             dialog:[],
+            input:'',
         }
 
         this.handleChatSubmit = this.handleChatSubmit.bind(this);
+        this.handleOnchange = this.handleOnchange.bind(this);
     }
 
-    handleChatSubmit(msg){
-
+    handleChatSubmit(){
         this.setState({
-            dialog: this.state.dialog.concat(msg),
+            dialog: this.state.dialog.concat(this.state.input),
+        })
+    }
+
+    handleOnchange(msg){
+        this.setState({
+            input: msg,
         })
     }
 
@@ -25,7 +32,7 @@ class Main extends React.Component{
     render(){
         return (
           <div className = "Main">
-            <User handleChatSubmit = {this.handleChatSubmit}/>
+            <User handleChatSubmit = {this.handleChatSubmit}  handleOnchange = {this.handleOnchange}/>
           </div>
         );
     }
