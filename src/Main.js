@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import User from './User.js';
+import Textlog from './Textlog.js'
 
 class Main extends React.Component{
 
@@ -33,6 +34,7 @@ class Main extends React.Component{
         return (
           <div className = "Main">
             <User handleChatSubmit = {this.handleChatSubmit}  handleOnchange = {this.handleOnchange}/>
+            <Textlog dialog = {this.state.dialog}/>
           </div>
         );
     }
