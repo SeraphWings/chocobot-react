@@ -5,7 +5,7 @@ class  Server extends React.Component {
 
     response(dialog){
         const response = "you said: " + dialog[-1];
-        this.props.handleServerOnchange(response);
+        this.props.handleServerSubmit(response);
     }
 
     render(){

@@ -35,10 +35,12 @@ class Main extends React.Component{
         })
     }
 
-    handleServerSubmit(){
+    handleServerSubmit = (msg) => {
+        console.log(msg);
+
         this.setState({
-            dialog: this.state.dialog.concat(this.state.serverInput),
-            serverInputinput: '',
+            dialog: this.state.dialog.concat(msg),
+            serverInput: msg,
         })
 
     }
@@ -48,7 +50,7 @@ class Main extends React.Component{
             serverInput: msg,
         })
 
-        this.handleServerSubmit();
+        // this.handleServerSubmit();
     }
 
 
@@ -61,7 +63,7 @@ class Main extends React.Component{
                 value ={this.state.input}/>
             <Textlog dialog = {this.state.dialog}/>
             <Server dialog = {this.state.dialog}
-                    handleServerOnchange = {this.handleServerOnchange}/>
+                    handleServerSubmit = { this.handleServerSubmit}/>
           </div>
         );
     }
