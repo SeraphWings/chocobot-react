@@ -2,7 +2,7 @@ import React from 'react';
 import './Main.css';
 import User from './User.js';
 import Textlog from './Textlog.js'
-import Server from './Server.js'
+// import Server from './Server.js'
 
 class Main extends React.Component{
 
@@ -18,14 +18,16 @@ class Main extends React.Component{
         this.handleChatSubmit = this.handleChatSubmit.bind(this);
         this.handleServerSubmit = this.handleServerSubmit.bind(this);
         this.handleOnchange = this.handleOnchange.bind(this);
-        this.handleServerOnchange = this.handleServerOnchange.bind(this);
     }
 
     handleChatSubmit(){
         this.setState({
             dialog: this.state.dialog.concat(this.state.input),
             input: '',
-        })
+        }, () => {
+            this.handleServerSubmit();
+        });
+
 
     }
 
@@ -35,25 +37,17 @@ class Main extends React.Component{
         })
     }
 
-    handleServerSubmit = (msg) => {
-        console.log(msg);
+    handleServerSubmit() {
+        const dialog = this.state.dialog;
+        const response = "you said: " + dialog[dialog.length - 1];
+        console.log(response);
 
         this.setState({
-            dialog: this.state.dialog.concat(msg),
-            serverInput: msg,
+            dialog: this.state.dialog.concat(response),
+
         })
 
     }
-
-    handleServerOnchange(msg){
-        this.setState({
-            serverInput: msg,
-        })
-
-        // this.handleServerSubmit();
-    }
-
-
 
     render(){
         return (
@@ -62,8 +56,6 @@ class Main extends React.Component{
                 handleOnchange = {this.handleOnchange}
                 value ={this.state.input}/>
             <Textlog dialog = {this.state.dialog}/>
-            <Server dialog = {this.state.dialog}
-                    handleServerSubmit = { this.handleServerSubmit}/>
           </div>
         );
     }
