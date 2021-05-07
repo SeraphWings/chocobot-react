@@ -26,6 +26,7 @@ class Main extends React.Component{
             input: '',
         }, () => {
             this.handleServerSubmit();
+
         });
 
 
