@@ -20,9 +20,10 @@ class User extends React.Component {
             <form onSubmit ={this.handleSubmit}>
                 <label > do you want to talk to me ?
                     <p>
-                        <input type="text"
+                        <input autoFocus type="text"
                             value={this.props.value}
                             onChange={this.handleChange}
+
                             />
                         <input type='submit' value = "Send"/>
                     </p>

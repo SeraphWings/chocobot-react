@@ -22,7 +22,7 @@ class Textlog extends React.Component {
 
     render() {
         return (
-            <div>{this.generate(this.props.dialog)}</div>
+            <div className="TextCase">{this.generate(this.props.dialog)}</div>
         )
 
     };
