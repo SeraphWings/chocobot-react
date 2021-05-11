@@ -2,11 +2,10 @@ ul{
     list-style-type: none;
     margin-left: 0px;
     padding-right: 40px;
-
 }
 
-.TestCase {
-    height: 400px ;
+.TextCase {
+    height: 400px;
     width: 90%;
     overflow-y: auto;
 }

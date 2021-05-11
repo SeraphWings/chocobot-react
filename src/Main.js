@@ -57,6 +57,7 @@ class Main extends React.Component{
                 handleOnchange = {this.handleOnchange}
                 value ={this.state.input}/>
             <Textlog dialog = {this.state.dialog}/>
+            
           </div>
         );
     }
